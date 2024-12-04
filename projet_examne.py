@@ -135,14 +135,13 @@ if search_option == "Nom":
 
 # Affichage des coordonnées géographiques sur une carte avec folium
 if not filtered_users.empty:
+    # Créer une carte de base
+    user_map = folium.Map(location=[filtered_users.iloc[0]['address']['geo']['lat'], filtered_users.iloc[0]['address']['geo']['lng']], zoom_start=12)
+
+    # Ajouter un marqueur pour chaque utilisateur
     for idx, user in filtered_users.iterrows():
         lat = user['address']['geo']['lat']
         lng = user['address']['geo']['lng']
-
-        # Créer une carte centrée sur l'utilisateur sélectionné
-        user_map = folium.Map(location=[lat, lng], zoom_start=12)
-
-        # Ajouter un marqueur pour cet utilisateur
         folium.Marker([lat, lng], popup=user['name']).add_to(user_map)
 
     # Afficher la carte dans Streamlit
