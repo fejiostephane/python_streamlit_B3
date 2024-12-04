@@ -1,0 +1,10 @@
+#pour créer
+
+python -m venv nom_de_environnement
+
+#pour l'activer
+
+nom_de_environnement\Script\activate.bat
+
+#pour desactiver
+deactivate

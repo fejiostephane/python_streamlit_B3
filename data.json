@@ -1,0 +1,8 @@
+[
+	{
+    "name": "stephane",
+    "age": 19,
+	"citie": "lyon",
+    "langage": ["anglais", "francais"]
+	}
+]
